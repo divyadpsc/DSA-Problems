@@ -1,0 +1,56 @@
+max-consecutive-ones problem leetcode : https://leetcode.com/problems/max-consecutive-ones/solutions/5784668/c-best-approach-to-solve-in-0-n-time-complexity/?envType=problem-list-v2&envId=array&difficulty=EASY
+
+TimeComplexity 3ms:
+class Solution {
+public:
+    int findMaxConsecutiveOnes(vector<int>& nums) {
+        int c=0;
+        int ans=INT_MIN;
+        int i=0;
+        while(i<nums.size()){
+            if(nums[i]==1){
+                c++;
+                cout<<"c1"<<c<<endl;
+                i++;
+                cout<<"i"<<i<<endl;
+                ans=max(ans,c);
+            }
+            else if (nums[i]==0|| i==nums.size()-1) {
+                ans=max(c,ans);
+                cout<<"ans"<<ans<<endl;
+                c=0;
+                i++;
+                cout<<"i1"<<i<<endl;
+
+            }
+        }
+        return ans;
+    }
+};
+
+Time complexity: 0ms:
+class Solution {
+public:
+    int findMaxConsecutiveOnes(vector<int>& nums) {
+        int count=0;
+        int first=0, second=0;
+        while(second<nums.size() && first<nums.size()){
+            if(nums[first]==1){
+                if(nums[second]==1){
+                second++;
+                int size = second-first;
+                count = max(count,size);
+                }
+                else{
+                    second++;
+                    first = second;
+                }
+            }
+            else{
+                first++;
+            }
+            
+        }
+        return count;
+    }
+};
