@@ -1,4 +1,4 @@
-max-consecutive-ones problem leetcode : https://leetcode.com/problems/max-consecutive-ones/solutions/5784668/c-best-approach-to-solve-in-0-n-time-complexity/?envType=problem-list-v2&envId=array&difficulty=EASY
+max-consecutive-ones problem leetcode : https://leetcode.com/problems/max-consecutive-ones
 
 TimeComplexity 3ms:
 class Solution {
